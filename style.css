@@ -1,0 +1,91 @@
+@font-face {
+    font-family: mon;
+    src: url(./Montserrat-Regular.ttf);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: mon;
+    background: #000;
+}
+
+.menu-button-bg {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%, -50%);
+    transition: .2s;
+    cursor: pointer;
+}
+
+.menu-button {
+    width: 40px;
+    height: 6px;
+    position: absolute;
+    top: calc(50% - 3px);
+    transform: translateY(0, -50%);
+    background: #fff;
+    border-radius: 3px;
+    transform: rotate(270deg);
+    transition: .4s;
+    cursor: pointer;
+}
+
+.menu-button::before {
+    content: "";
+    width: 40px;
+    height: 6px;
+    position: absolute;
+    background: #fff;
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.menu-button::after {
+    content: "";
+    width: 40px;
+    height: 6px;
+    position: absolute;
+    background: #fff;
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.menu-button-bg:hover .menu-button {
+    transform: rotate(0deg);
+}
+
+.menu-button-bg:hover .menu-button::before {
+    transform: translateY(-10px)
+}
+
+.menu-button-bg:hover .menu-button::after {
+    transform: translateY(10px)
+}
+
+.menu-button.open {
+    transform: rotate(45deg);
+}
+
+.menu-button.open::before {
+    transform: rotate(90deg);
+}
+
+.menu-button.open::after {
+    transform: rotate(90deg);
+}
+
+.menu-button-bg.open .menu-button {
+    transform: rotate(45deg);
+}
+
+.menu-button-bg.open .menu-button::before {
+    transform: rotate(90deg);
+}
+
+.menu-button-bg.open .menu-button::after {
+    transform: rotate(90deg);
+}
